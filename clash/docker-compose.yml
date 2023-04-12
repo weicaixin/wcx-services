@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  clash:
+    image: 'weicaixin/clash:latest'
+    restart: unless-stopped
+    ports:
+      - '7890:7890'
+      - '9090:9090'
+    volumes:
+      - '/srv/clash/config.yaml:/root/.config/clash/config.yaml'
+    shm_size: '256m'
